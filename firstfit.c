@@ -6,7 +6,7 @@
 
 void firstFit(int blockSize[], int m, int processSize[], int n) {
     int allocation[MAX_PROCESS];
-    int i;
+    int i,j;
 
     // Initialize allocation array to -1
     for (i = 0; i < n; i++) {
@@ -16,7 +16,7 @@ void firstFit(int blockSize[], int m, int processSize[], int n) {
     // Iterate through all processes
     for (i = 0; i < n; i++) {
         // Find the first block that can accommodate the current process
-        for (int j = 0; j < m; j++) {
+        for (j = 0; j < m; j++) {
             if (blockSize[j] >= processSize[i]) {
                 // Allocate the block to the process
                 allocation[i] = j;
